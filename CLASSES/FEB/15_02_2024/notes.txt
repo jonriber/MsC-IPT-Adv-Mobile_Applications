@@ -1,0 +1,25 @@
+COURSE INTRODUCTION
+
+START: FEB, 14, 2014
+
+END: JUNE, 07, 2014
+
+EASTER BREAK: MARCH 25 TO APRIL
+
+E-LEARNING:
+NUMBER: 5557
+KEY: DAM#$A#ipt20))24
+
+PROGRAM:
+
+- Mobile apps development specificites
+- Development lifecycle
+- Development of Mobile App
+    . Persistent Data
+    . Maps and Location
+    . Acces to hardware and sensors
+- Testing and Publishing Apps
+
+IPT has 2 Google Stores to distribute apps
+One is official and the other one is used for study purpose
+
