@@ -7,11 +7,14 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="728dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="start"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="3dp">
+        tools:layout_editor_absoluteY="3dp"
+
+        >
 
         <TextView
             android:id="@+id/textView"
@@ -23,8 +26,8 @@
         />
 
         <TextView
-            android:id="@+id/textView_information"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView_ask_for_nickName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/msg"
             android:textSize="20sp"
@@ -42,19 +45,29 @@
         />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/show_CV_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/submit_button" />
+            android:text="@string/submit_button"
+
+            />
+
         <ScrollView
+            android:id="@+id/show_CV"
             android:layout_width="match_parent"
-            android:layout_height="400dp">
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            >
+
             <TextView
                 android:id="@+id/textView_cv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/cv"
+                android:textAlignment="textStart"
+                android:visibility="invisible"
+                android:lineSpacingMultiplier="1.2"
             />
         </ScrollView>
     </LinearLayout>
