@@ -20,9 +20,9 @@ class MainActivity : AppCompatActivity() {
         val auxBt = findViewById<Button>(R.id.button)
             auxBt.setOnClickListener{
             rollTheDice()
-        }
+            }
             auxBt.setOnLongClickListener {
-                reset()
+                resetDice()
             }
 
     }
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
      * Reset function, which is attached to a long click event
      * It basically resets our app status
      */
-    private fun reset(){
+    private fun resetDice(){
         val auxTxt =findViewById<TextView>(R.id.dice_value)
         auxTxt.text = 0.toString()
     }
