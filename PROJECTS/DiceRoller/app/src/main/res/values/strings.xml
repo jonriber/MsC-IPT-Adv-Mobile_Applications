@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Dice Roller</string>
     <string name="button_text">Random</string>
-    <string name="dice_value">7</string>
+    <string name="dice_value">6</string>
+    <string name="diceimagedescription">DiceImageDescription</string>
 </resources>

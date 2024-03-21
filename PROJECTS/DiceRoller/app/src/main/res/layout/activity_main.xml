@@ -4,28 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/dark_primary"
+    >
 
     <TextView
         android:id="@+id/dice_value"
-        style="@style/TextView"
-        android:layout_width="55dp"
-        android:layout_height="17dp"
         android:text="@string/dice_value"
         app:layout_constraintBottom_toTopOf="@id/image_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/TextView"
+        />
 
     <ImageView
         android:id="@+id/image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dice_value"
         app:layout_constraintBottom_toTopOf="@id/button"
-        app:srcCompat="@drawable/dice_6">
+        app:srcCompat="@drawable/dice_6"
+        android:contentDescription="@string/diceimagedescription"
+        style="@style/diceImage"
+        >
     </ImageView>
 
     <Button
