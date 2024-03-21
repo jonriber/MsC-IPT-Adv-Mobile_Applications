@@ -21,8 +21,16 @@ class MainActivity : AppCompatActivity() {
             auxBt.setOnClickListener{
             rollTheDice()
         }
+            auxBt.setOnLongClickListener {
+                reset()
+            }
+
     }
 
+    /**
+     * Roll the dice function
+     * generates a random value between 1 and 6
+     */
      private fun rollTheDice(){
         val randomNumber = java.util.Random().nextInt(6) +1
         val auxTxt =findViewById<TextView>(R.id.dice_value)
@@ -43,5 +51,14 @@ class MainActivity : AppCompatActivity() {
          auxDiceImage.setImageResource(imageToShow)
 
      }
+
+    /**
+     * Reset function, which is attached to a long click event
+     * It basically resets our app status
+     */
+    private fun reset(){
+        val auxTxt =findViewById<TextView>(R.id.dice_value)
+        auxTxt.text = 0.toString()
+    }
 
 }
