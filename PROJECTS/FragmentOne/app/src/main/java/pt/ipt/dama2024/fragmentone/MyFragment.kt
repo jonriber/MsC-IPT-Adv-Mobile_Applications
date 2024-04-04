@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_PARAM1_TXT_LABEL = ""
+private const val ARG_PARAM2_TXT_BUTTON = ""
+private const val ARG_PARAM3_NUMBER = ""
 
 /**
  * A simple [Fragment] subclass.
@@ -20,14 +22,17 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MyFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
+    private var txtLabel: String? = null
+    private var txtButton: String? = null
+    private var number:Byte = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            txtLabel = it.getString(ARG_PARAM1_TXT_LABEL)
+            txtButton = it.getString(ARG_PARAM2_TXT_BUTTON)
+            number = it.getByte(ARG_PARAM3_NUMBER)
+
         }
     }
 
@@ -43,11 +48,16 @@ class MyFragment : Fragment() {
         val aux_btn:Button = view.findViewById(R.id.fragment_button)
 
         //assign paramenters do variables
-        aux_txt.text = param1
-        aux_btn.text = param2
+        aux_txt.text = txtLabel
+        aux_btn.text = txtButton
 
         aux_btn.setOnClickListener{
-            Toast.makeText(this.context, "Toaster Text, button $param2",Toast.LENGTH_LONG).show()
+            if (number % 2 !=0) {
+                Toast.makeText(this.context, "Toaster Text, button $txtButton", Toast.LENGTH_LONG)
+                    .show()
+            } else {
+                Snackbar.make(view,"Snackbar Text, button $txtButton", Snackbar.LENGTH_LONG).show()
+            }
         }
         return view
     }
@@ -57,17 +67,19 @@ class MyFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
+         * @param param1 Parameter 1, label text.
+         * @param param2 Parameter 2, button text.
+         * @param number Parameter 3, item position
          * @return A new instance of fragment MyFragment.
          */
-        // TODO: Rename and change types and number of parameters
+        //Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(param1: String, param2: String, number: Byte) =
             MyFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putString(ARG_PARAM1_TXT_LABEL, param1)
+                    putString(ARG_PARAM2_TXT_BUTTON, param2)
+                    putByte(ARG_PARAM3_NUMBER, number)
                 }
             }
     }
