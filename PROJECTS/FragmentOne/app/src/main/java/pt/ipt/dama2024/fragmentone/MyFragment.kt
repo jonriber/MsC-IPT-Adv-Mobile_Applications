@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,7 +20,6 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class MyFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
@@ -34,7 +36,20 @@ class MyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my, container, false)
+        val view:View =  inflater.inflate(R.layout.fragment_my, container, false)
+
+        // look for fragment objects
+        val aux_txt:TextView = view.findViewById(R.id.frag_text)
+        val aux_btn:Button = view.findViewById(R.id.fragment_button)
+
+        //assign paramenters do variables
+        aux_txt.text = param1
+        aux_btn.text = param2
+
+        aux_btn.setOnClickListener{
+            Toast.makeText(this.context, "Toaster Text, button $param2",Toast.LENGTH_LONG).show()
+        }
+        return view
     }
 
     companion object {
