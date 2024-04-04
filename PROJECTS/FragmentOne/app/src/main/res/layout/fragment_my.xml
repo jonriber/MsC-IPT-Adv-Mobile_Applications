@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE LinearLayout [<!ELEMENT LinearLayout (TextView|Button)*><!ATTLIST LinearLayoutxmlns:android CDATA #REQUIREDxmlns:tools CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDtools:context CDATA #REQUIREDandroid:orientation CDATA #REQUIRED><!ELEMENT TextView (#PCDATA)><!ATTLIST TextViewandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIREDandroid:text CDATA #REQUIREDandroid:textSize CDATA #REQUIRED><!ELEMENT Button (#PCDATA)><!ATTLIST Buttonandroid:id CDATA #REQUIREDandroid:text CDATA #REQUIREDandroid:layout_width CDATA #REQUIREDandroid:layout_height CDATA #REQUIRED>]>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context=".MyFragment"
+    android:orientation="vertical">
+
+    <!-- blank fragment layout -->
+    <TextView
+        android:id="@+id/frag_text"
+        android:text="@string/hello_blank_fragment"
+
+        style="@style/labels" />
+
+    <Button
+        android:id="@+id/fragment_button"
+        android:text="@string/button"
+        style="@style/buttons" />
+
+</LinearLayout>
