@@ -14,7 +14,7 @@ import com.google.android.material.snackbar.Snackbar
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1_TXT_LABEL = ""
 private const val ARG_PARAM2_TXT_BUTTON = ""
-private const val ARG_PARAM3_NUMBER = ""
+private const val ARG_PARAM3_NUMBER = "0"
 
 /**
  * A simple [Fragment] subclass.
@@ -47,7 +47,7 @@ class MyFragment : Fragment() {
         val aux_txt:TextView = view.findViewById(R.id.frag_text)
         val aux_btn:Button = view.findViewById(R.id.fragment_button)
 
-        //assign paramenters do variables
+        //assign parameters do variables
         aux_txt.text = txtLabel
         aux_btn.text = txtButton
 
