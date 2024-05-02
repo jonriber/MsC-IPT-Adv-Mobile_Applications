@@ -1,4 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">API 3</string>
     <string name="button_text">Add a new random note</string>
 </resources>
