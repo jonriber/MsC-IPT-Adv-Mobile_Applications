@@ -11,7 +11,7 @@ import com.google.gson.annotations.SerializedName
  * @constructor Create and empty note class
  */
 data class Note(
-    @SerializedName("id") val id:Number,
+    @SerializedName("id") val id:Number?,
     @SerializedName("title") val title:String,
     @SerializedName("description") val description:String
 )
