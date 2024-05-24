@@ -73,4 +73,13 @@ There are a lot of questions that development team must answer to make your app 
 And it only turns visible once all questions are answered.
 
 
+## Practical session
 
+`Open streeet maps` is an alternative to `Google Maps`.
+
+The mais purpose for this practice section is to render an map app.
+
+steps to create an app:
+
+- add gradle resources and dependencies
+- add app permissions
