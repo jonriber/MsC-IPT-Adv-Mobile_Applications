@@ -1,0 +1,7 @@
+{
+    "appTitle": "Pomodoro App",
+    "start": "Start",
+    "stop": "Stop",
+    "reset": "Reset",
+    "language": "Language"
+  }
