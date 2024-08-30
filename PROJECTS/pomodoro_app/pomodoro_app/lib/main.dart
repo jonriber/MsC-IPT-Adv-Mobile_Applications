@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.system,
       // theme: ThemeData(
       //   // This is the theme of your application.
       //   //
@@ -36,7 +38,25 @@ class MyApp extends StatelessWidget {
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       //   useMaterial3: true,
       // ),
-      home: const MyHomePage(title: 'Pomodoro App'),
+      home: AuthWrapper(),
+    );
+  }
+}
+
+class AuthWrapper extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return CircularProgressIndicator();
+        } else if (snapshot.hasData) {
+          return PomodoroHomePage();
+        } else {
+          return SignInPage();
+        }
+      },
     );
   }
 }
