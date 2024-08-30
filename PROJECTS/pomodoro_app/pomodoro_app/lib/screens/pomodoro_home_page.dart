@@ -4,6 +4,8 @@ import '../services/firestore_service.dart';
 import '../models/task_model.dart';
 
 class PomodoroHomePage extends StatefulWidget {
+  const PomodoroHomePage({super.key});
+
   @override
   _PomodoroHomePageState createState() => _PomodoroHomePageState();
 }
@@ -16,7 +18,7 @@ class _PomodoroHomePageState extends State<PomodoroHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: GFAppBar(
-        title: Text('Pomodoro Timer'),
+        title: const Text('Pomodoro Timer'),
         centerTitle: true,
         backgroundColor: GFColors.DARK,
       ),
@@ -26,13 +28,13 @@ class _PomodoroHomePageState extends State<PomodoroHomePage> {
           children: [
             GFCard(
               title: GFListTile(
-                title: Text('Work Session'),
+                title: const Text('Work Session'),
                 icon: Icon(Icons.timer, color: GFColors.PRIMARY),
               ),
               content: Column(
                 children: [
                   Text('$_workDuration Minutes',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 48, fontWeight: FontWeight.bold)),
                   GFRating(
                     onChanged: (value) {
@@ -94,7 +96,7 @@ class _PomodoroHomePageState extends State<PomodoroHomePage> {
                       },
                     );
                   } else {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
                 },
               ),
@@ -108,7 +110,7 @@ class _PomodoroHomePageState extends State<PomodoroHomePage> {
             // Add task creation logic here
           },
           text: "New Task",
-          icon: Icon(Icons.add),
+          icon: const Icon(Icons.add),
           color: GFColors.PRIMARY,
         ),
         verticalPosition: 0.9,
